@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        
+        <h1>SimplePass</h1>
+        
+        <h3>Test it!</h3>
+
+        Click the input to create a password
+
+        <input type="text" onfocus="createPassword()" />
+
+        <script type="text/javascript">
+
+        createPassword = function () {
+            document.activeElement.value = btoa(encodeURIComponent(prompt("Please enter your personal password", "") + window.location.hostname).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+                    return String.fromCharCode('0x' + p1);
+                }));
+        };
+
+    </script>
+        <h3>Bookmarklet</h3>
+        Add this to your bookmarks toolbar
+        <a href="javascript:(function()%7Bdocument.activeElement.value%20%3D%20btoa(encodeURIComponent(prompt(%22Please%20enter%20your%20personal%20password%22%2C%20%22%22)%20%2B%20window.location.hostname).replace(%2F%25(%5B0-9A-F%5D%7B2%7D)%2Fg%2C%20function(match%2C%20p1)%20%7Breturn%20String.fromCharCode('0x'%20%2B%20p1)%3B%7D))%7D)()">SimplePass</a>
+    </body>
+</html>
