@@ -5,4 +5,4 @@ Add this to your bookmarks toolbar
 <br>
 <br>
 Test it here:<br>
-<input type="text">
+<input type="text"/>
